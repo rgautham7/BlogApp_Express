@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <header>
+        <h1>About <%= companyName %></h1>
+    </header>
+    <main>
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to create a vibrant online community where readers can discover valuable insights and share their thoughts. We strive to produce well-researched and thoughtfully crafted articles that add value to your life. We believe in the power of knowledge and the importance of staying curious, and we aim to spark conversations that lead to positive change.</p>
+        </section>
+        <section class="team">
+            <h2>Our Team</h2>
+            <p>Our team is composed of passionate writers, creative thinkers, and subject matter experts who are dedicated to bringing you content that is both informative and entertaining. Each member of our team brings a unique perspective, ensuring that our blog is rich with diverse viewpoints and expert opinions.</p>
+        </section>
+        <section class="about-author">
+            <h2>About the Author</h2>
+            <p>Hello! I'm <strong><a href="https://github.com/rgautham7">Gautham R</a></strong>, the creator of Blog Spot. With a passion for writing and a love for exploring new ideas along with designing dynamic and eye-catching websites, I started this blog to share my insights and experiences with readers around the world. Whether it's through travel stories, tech updates, or health tips, my goal is to provide valuable content that informs, inspires, and engages. Thank you for joining me on this journey, and I hope you find something here that sparks your curiosity and enriches your life. Happy reading!</p>
+        </section>
+        <section class="why-us">
+            <h2>Why <%= companyName %>?</h2>
+            <ul>
+                <li><strong>Quality Content:</strong> We prioritize quality over quantity, ensuring that every piece of content we publish meets our high standards.</li>
+                <li><strong>Diverse Topics:</strong> From travel guides and tech reviews to health advice and personal growth tips, we cover a wide array of subjects to cater to your interests.</li>
+                <li><strong>Engaging Community:</strong> We encourage reader interaction through comments, social media, and email. Your feedback is important to us and helps us improve.</li>
+                <li><strong>Regular Updates:</strong> We update our blog regularly with fresh content to keep you informed and entertained.</li>
+            </ul>
+        </section>
+        <section class="join-us">
+            <h2>Join Us</h2>
+            <p>We invite you to explore our blog and join our community of curious and engaged readers. Subscribe to our newsletter to stay updated with our latest posts, and follow us on social media to join the conversation.</p>
+            <p>Thank you for visiting <%= companyName %>. We're excited to have you here and look forward to sharing our journey with you!</p>
+            <br>
+            <p>Happy reading!</p>
+            <p>The <%= companyName %> Team</p>
+        </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
