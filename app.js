@@ -1,11 +1,13 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 
 const blogRoutes = require('./routes/blogRoutes');
 
 const app =  express();
+const dbURI = process.env.MONGODB_KEY;
 
-const dbURI = 'mongodb+srv://mukeg:rgautham@gautham7.sjclk4a.mongodb.net/node-app?retryWrites=true&w=majority&appName=Gautham7';
 mongoose.connect(dbURI)
     .then((result) => app.listen(3000))
     .catch(err => console.log(err));
