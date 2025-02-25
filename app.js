@@ -9,17 +9,43 @@ const app =  express();
 const dbURI = process.env.MONGODB_KEY;
 const port = process.env.PORT || 3000;
 
+// EJS Setup
+app.set('view engine', 'ejs');
+
+// Middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect(dbURI)
-    .then(() => app.listen(port, () => {
-        console.log(`Server running on port ${port}`);
-    }))
-    .catch(err => console.log(err));
+// Routes
+app.get('/', (req, res) => {
+    res.redirect('/blogs');
+});
 
-app.set('view engine', 'ejs');
+app.get('/about', (req, res) => {
+    res.render('about', {title: 'About', companyName: 'BlogSpot'});
+});
+
+app.use('/blogs', blogRoutes);
+
+// 404 handler
+app.use((req, res) => {
+    res.status(404).render('404', {title: '404 - Not found'});
+});
+
+// Connect to MongoDB and start server
+mongoose.connect(dbURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+}))
+.catch(err => {
+    console.error('MongoDB connection error:', err);
+});
+
+module.exports = app;
 
 // Mongoose and Mongo routers interactions
 
@@ -56,17 +82,3 @@ app.set('view engine', 'ejs');
 //             console.log(err);
 //         })
 // });
-
-app.get('/', (req, res) => {
-    res.redirect('/blogs');
-});
-
-app.get('/about', (req, res) => {
-    res.render('about', {title: 'About', companyName: 'BlogSpot'});
-});
-
-app.use('/blogs', blogRoutes);
-
-app.use((req, res) => {
-    res.status(404).render('404', {title: '404 - Not found'});
-});

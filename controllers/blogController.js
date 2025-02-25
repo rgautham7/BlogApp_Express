@@ -14,11 +14,11 @@ const blog_details = (req, res) => {
     const id = req.params.id;
     Blog.findById(id)
         .then((result) => {
-            res.render('details', { title: result.title, blog: result })
+            res.render('details', { title: result.title, blog: result });
         })
         .catch((err) => {
             res.status(404).render('404', { title: '404 - Page not Found' });
-        })
+        });
 };
 
 const blog_create_get = (req, res) => {
@@ -33,7 +33,7 @@ const blog_create_post = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-        })
+        });
 };
 
 const blog_delete = (req, res) => {
