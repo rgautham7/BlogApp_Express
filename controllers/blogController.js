@@ -22,8 +22,11 @@ const blog_details = (req, res) => {
 };
 
 const blog_create_get = (req, res) => {
-    const blog = new Blog(req.body);
+    res.render('create', { title: 'Create a New blog' });
+};
 
+const blog_create_post = (req, res) => {
+    const blog = new Blog(req.body);
     blog.save()
         .then((result) => {
             res.redirect('/blogs');
@@ -33,18 +36,13 @@ const blog_create_get = (req, res) => {
         })
 };
 
-const blog_create_post = (req, res) => {
-    res.render('create', { title: 'Create a New blog' });
-};
-
 const blog_delete = (req, res) => {
     const id = req.params.id;
-
     Blog.findByIdAndDelete(id)
-    .then((result) => {
-        res.json({ redirect: '/blogs' });
-    })
-    .catch((err) => console.log(err));
+        .then((result) => {
+            res.json({ redirect: '/blogs' });
+        })
+        .catch((err) => console.log(err));
 };
 
 module.exports = {
