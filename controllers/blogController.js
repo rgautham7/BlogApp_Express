@@ -7,7 +7,7 @@ const blog_index = (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-        })
+        });
 };
 
 const blog_details = (req, res) => {
