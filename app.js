@@ -7,10 +7,11 @@ const blogRoutes = require('./routes/blogRoutes');
 
 const app =  express();
 const dbURI = process.env.MONGODB_KEY;
+const port = process.env.PORT || 3000;
 
 mongoose.connect(dbURI)
-    .then(() => app.listen(3000, () => {
-        console.log('Server running on port 3000');
+    .then(() => app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
     }))
     .catch(err => console.log(err));
 
