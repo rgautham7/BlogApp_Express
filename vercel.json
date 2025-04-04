@@ -1,24 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/styles.css",
-      "dest": "/public/styles.css"
-    },
-    {
-      "src": "/.*",
-      "dest": "app.js"
-    }
-  ],
   "functions": {
-    "app.js": {
-      "includeFiles": "views/**"
+    "api/server.js": {
+      "memory": 1024,
+      "includeFiles": ["views/**", "public/**", "models/**", "controllers/**", "routes/**"]
     }
-  }
+  },
+  "routes": [
+    { "src": "/styles.css", "dest": "/public/styles.css" },
+    { "src": "/(.*)", "dest": "/api/server.js" }
+  ]
 } 
