@@ -3,7 +3,7 @@
   "functions": {
     "api/server.js": {
       "memory": 1024,
-      "includeFiles": ["views/**", "public/**", "models/**", "controllers/**", "routes/**"]
+      "includeFiles": "views/**,public/**,models/**,controllers/**,routes/**"
     }
   },
   "routes": [
