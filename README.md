@@ -30,7 +30,7 @@ A full-stack blog application built with Express.js and MongoDB, following the M
 
 1. Clone the repository
    ```bash
-   git clone [[https://github.com/rgautham7/BlogApp_Express](https://github.com/rgautham7/BlogApp_Express)]
+   git clone https://github.com/rgautham7/BlogApp_Express
    cd BlogApp_Express
    ```
 
