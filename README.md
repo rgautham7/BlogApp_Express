@@ -67,16 +67,20 @@ Information about BlogSpot and its mission.
 ## 🏗 Project Structure
 
 BlogApp_Express/
-├── api/ # API routes for serverless deployment
-├── controllers/ # Business logic
-├── models/ # Database models
-├── public/ # Static files
-├── routes/ # Route definitions
-├── views/ # EJS templates
-├── app.js # Main application file
-├── package.json # Project dependencies
-└── README.md # Project documentation
-
+├── api/                    # API routes for serverless deployment
+├── controllers/           # Business logic
+├── models/               # Database models
+├── public/               # Static files
+│   ├── css/             # Stylesheets
+│   ├── js/              # Client-side JavaScript
+│   └── images/          # Image assets
+├── routes/               # Route definitions
+├── views/                # EJS templates
+│   ├── partials/        # Reusable template parts
+│   └── pages/           # Page templates
+├── app.js               # Main application file
+├── package.json         # Project dependencies
+└── README.md            # Project documentation
 
 ## 💻 API Endpoints
 
