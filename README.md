@@ -56,19 +56,13 @@ A full-stack blog application built with Express.js and MongoDB, following the M
 ![Blog Listing Page](./screenshots/blogs.png)
 The main page displays all blog posts with their titles and snippets. Users can click on individual posts to read more.
 
-*[Add a screenshot of your blogs listing page here]*
-
 ### Create New Blog (`/new_blog`)
 ![New Blog Page](./screenshots/new_blog.png)
 A form page where users can create new blog posts by entering a title, snippet, and the main content.
 
-*[Add a screenshot of your new blog creation page here]*
-
 ### About Page (`/about`)
 ![About Page](./screenshots/about.png)
 Information about BlogSpot and its mission.
-
-*[Add a screenshot of your about page here]*
 
 ## 🏗 Project Structure
 
